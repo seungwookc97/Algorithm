@@ -1,0 +1,7 @@
+-- 코드를 작성해주세요
+
+SELECT C.ID FROM ECOLI_DATA C 
+WHERE C.PARENT_ID IN (SELECT B.ID FROM ECOLI_DATA B 
+                     WHERE B.PARENT_ID IN (SELECT A.ID FROM ECOLI_DATA A 
+                                          WHERE A.PARENT_ID IS NULL)) ORDER BY C.ID;
+
